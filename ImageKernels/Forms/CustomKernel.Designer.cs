@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomKernel));
             this.save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.f = new ImageKernels.CustomTextBox();
             this.c = new ImageKernels.CustomTextBox();
             this.resetButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // save
@@ -49,7 +51,7 @@
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(109, 46);
             this.save.TabIndex = 1;
-            this.save.Text = "Guardar";
+            this.save.Text = "Aplicar";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
@@ -185,5 +187,6 @@
         private CustomTextBox f;
         private CustomTextBox c;
         private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

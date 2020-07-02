@@ -62,7 +62,7 @@ namespace ImageKernels
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = @"Imagen|*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;*.ico;*.tif;*.tiff;*.bmp";
-            fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); 
+            fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures); 
             fileDialog.Title = @"Porfavor seleccione una imagen.";
             DialogResult result = fileDialog.ShowDialog();
 
@@ -132,15 +132,12 @@ namespace ImageKernels
             switch (selectedIndex)
             {
                 case 0:
-                    picture1.Image = actualImage;
                     picture2.Image = actualImage;
                     break;
                 case 1:
-                    picture1.Image = PictureController.convertToGrayScale(actualImage);
                     picture2.Image = PictureController.convertToGrayScale(actualImage);
                     break;
                 case 2:
-                    picture1.Image = PictureController.convertToSepia(actualImage);
                     picture2.Image = PictureController.convertToSepia(actualImage);
                     break;
                 default:
@@ -149,7 +146,7 @@ namespace ImageKernels
                     break;
             }
 
-            actualPixels = KernelController.GetBitMapColorMatrix((Bitmap) picture1.Image);
+            actualPixels = KernelController.GetBitMapColorMatrix((Bitmap) picture2.Image);
 
             kernel.SelectedIndex = 8;
         }

@@ -19,6 +19,8 @@ namespace ImageKernels
         {
             InitializeComponent();
             setMatrixValues();
+
+            toolTip1.SetToolTip(resetButton, "Regresa la matriz a sus valores por defecto");
         }
 
         public void setMatrixValues()
