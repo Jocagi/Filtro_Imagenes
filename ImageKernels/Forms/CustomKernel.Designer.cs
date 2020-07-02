@@ -40,6 +40,7 @@
             this.i = new ImageKernels.CustomTextBox();
             this.f = new ImageKernels.CustomTextBox();
             this.c = new ImageKernels.CustomTextBox();
+            this.resetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // save
@@ -133,11 +134,22 @@
             this.c.Size = new System.Drawing.Size(122, 26);
             this.c.TabIndex = 9;
             // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(493, 77);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(109, 35);
+            this.resetButton.TabIndex = 12;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // CustomKernel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 259);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.i);
             this.Controls.Add(this.f);
             this.Controls.Add(this.c);
@@ -172,5 +184,6 @@
         private CustomTextBox i;
         private CustomTextBox f;
         private CustomTextBox c;
+        private System.Windows.Forms.Button resetButton;
     }
 }

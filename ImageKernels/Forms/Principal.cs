@@ -14,17 +14,18 @@ namespace ImageKernels
 {
     public partial class Principal : Form
     {
-        private readonly double[,] Difuminado = {{0.0625, 0.125, 0.0625}, {0.125, 0.25, 0.125}, {0.0625, 0.125, 0.0625}};
-        private readonly double[,] Realzar = { { -2, -1, 0 }, { -1, 1, 1 }, { 0, 1, 2 } };
-        private readonly double[,] Sobel_Inferior = { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
-        private readonly double[,] Sobel_Superior = { { 1, 2, 1 }, { 0, 0, 0 }, { -1, -2, -1 } };
-        private readonly double[,] Sobel_Izquierdo = { { 1, 0, -1 }, { 2, 0, -2 }, { 1, 0, -1 } };
-        private readonly double[,] Sobel_Derecho = { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
-        private readonly double[,] Contorno = { { -1, -1, -1 }, { -1, 8, -1 }, { -1, -1, -1 } };
-        private readonly double[,] Afilar = { { 0, -1, 0 }, { -1, 5, -1 }, { 0, -1, 0 } };
-        private readonly double[,] Original = { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
+        private readonly float[,] Difuminado = {{0.0625f, 0.125f, 0.0625f}, {0.125f, 0.25f, 0.125f}, {0.0625f, 0.125f, 0.0625f}};
+        private readonly float[,] Realzar = { { -2, -1, 0 }, { -1, 1, 1 }, { 0, 1, 2 } };
+        private readonly float[,] Sobel_Inferior = { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
+        private readonly float[,] Sobel_Superior = { { 1, 2, 1 }, { 0, 0, 0 }, { -1, -2, -1 } };
+        private readonly float[,] Sobel_Izquierdo = { { 1, 0, -1 }, { 2, 0, -2 }, { 1, 0, -1 } };
+        private readonly float[,] Sobel_Derecho = { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
+        private readonly float[,] Contorno = { { -1, -1, -1 }, { -1, 8, -1 }, { -1, -1, -1 } };
+        private readonly float[,] Afilar = { { 0, -1, 0 }, { -1, 5, -1 }, { 0, -1, 0 } };
+        private readonly float[,] Original = { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
         
         private Bitmap actualImage;
+        private Color[][] actualPixels;
 
         public Principal()
         {
@@ -68,9 +69,10 @@ namespace ImageKernels
             if (result == DialogResult.OK)
             {
                 actualImage = (Bitmap) Image.FromFile(fileDialog.FileName);
+                actualPixels = KernelController.GetBitMapColorMatrix(actualImage);
                 picture1.Image = Image.FromFile(fileDialog.FileName);
                 picture2.Image = Image.FromFile(fileDialog.FileName);
-
+                
                 kernel.SelectedIndex = 8;
                 filter.SelectedIndex = 0;
 
@@ -147,6 +149,8 @@ namespace ImageKernels
                     break;
             }
 
+            actualPixels = KernelController.GetBitMapColorMatrix((Bitmap) picture1.Image);
+
             kernel.SelectedIndex = 8;
         }
 
@@ -168,7 +172,7 @@ namespace ImageKernels
             // 9 -> Personalizado
 
             int selectedIndex = kernel.SelectedIndex;
-            Bitmap picture = (Bitmap)picture1.Image;
+            Color[][] picture = actualPixels;
 
             switch (selectedIndex)
             {

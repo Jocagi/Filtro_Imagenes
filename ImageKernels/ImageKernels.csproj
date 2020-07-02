@@ -50,7 +50,7 @@
     <StartupObject>ImageKernels.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>photo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\photo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -66,29 +66,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomKernel.cs">
+    <Compile Include="Forms\CustomKernel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomKernel.Designer.cs">
+    <Compile Include="Forms\CustomKernel.Designer.cs">
       <DependentUpon>CustomKernel.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomMaskedTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Principal.cs">
+    <Compile Include="Forms\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
+    <Compile Include="Forms\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="KernelController.cs" />
-    <Compile Include="PictureController.cs" />
+    <Compile Include="Controllers\KernelController.cs" />
+    <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomKernel.resx">
+    <EmbeddedResource Include="Forms\CustomKernel.resx">
       <DependentUpon>CustomKernel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
+    <EmbeddedResource Include="Forms\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,7 +115,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="photo.ico" />
+    <Content Include="Resources\photo.ico" />
     <None Include="Resources\Slide1.PNG" />
     <None Include="Resources\Loading.gif" />
   </ItemGroup>
@@ -126,5 +126,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

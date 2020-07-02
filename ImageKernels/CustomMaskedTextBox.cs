@@ -18,7 +18,7 @@ namespace ImageKernels
         protected override void OnTextChanged(EventArgs args)
         {
             string input = this.Text;
-            var regex = @"^-?[0-9]\d*(\.\d+)?$";
+            var regex = @"^-?[0-9]\d{0,9}(\.\d{1,6})?$";
 
             var match = Regex.Match(input, regex, RegexOptions.IgnoreCase);
 

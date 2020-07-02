@@ -38,18 +38,17 @@ namespace ImageKernels
         {
             try
             {
-                double A = Convert.ToDouble(a.Text);
-                double B = Convert.ToDouble(b.Text);
-                double C = Convert.ToDouble(c.Text);
-                double D = Convert.ToDouble(d.Text);
-                double E = Convert.ToDouble(e.Text);
-                double F = Convert.ToDouble(f.Text);
-                double G = Convert.ToDouble(g.Text);
-                double H = Convert.ToDouble(h.Text);
-                double I = Convert.ToDouble(i.Text);
-
-
-                KernelController.Personalizado = new double[,] { { A, B, C }, { D, E, F }, { G, H, I } };
+                float A = (float) Convert.ToDouble(a.Text);
+                float B = (float) Convert.ToDouble(b.Text);
+                float C = (float) Convert.ToDouble(c.Text);
+                float D = (float) Convert.ToDouble(d.Text);
+                float E = (float) Convert.ToDouble(e.Text);
+                float F = (float) Convert.ToDouble(f.Text);
+                float G = (float) Convert.ToDouble(g.Text);
+                float H = (float) Convert.ToDouble(h.Text);
+                float I = (float) Convert.ToDouble(i.Text);
+                
+                KernelController.Personalizado = new float[,] { { A, B, C }, { D, E, F }, { G, H, I } };
 
                 //Update Picture
                 PrincipalForm.kernel.SelectedIndex = -1;
@@ -62,6 +61,19 @@ namespace ImageKernels
                 MessageBox.Show(@"Uno de los valores ingresados no es valido. Intente de nuevo.");
                 Console.WriteLine(exception);
             }
+        }
+
+        private void resetButton_Click(object sender, EventArgs ex)
+        {
+            a.Text = "0";
+            b.Text = "0";
+            c.Text = "0";
+            d.Text = "0";
+            e.Text = "1";
+            f.Text = "0";
+            g.Text = "0";
+            h.Text = "0";
+            i.Text = "0";
         }
     }
 }
