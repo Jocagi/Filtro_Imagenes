@@ -1,6 +1,9 @@
 # Proyecto de Algebra Lineal
 Universidad Rafel Landívar 2020
 
+<a href="https://imgur.com/WuBMIqZ"><img src="https://i.imgur.com/WuBMIqZ.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/Vs4gm7Z"><img src="https://i.imgur.com/Vs4gm7Z.png" title="source: imgur.com" /></a>
+
 El proyecto del curso de Álgebra Lineal consiste en elaborar un programa de edición de imágenes por medio de filtros digitales. Este fue realizado en el lenguaje de programación: C#
 Para la implementación del proyecto se utilizaron matrices convolutivas de 3X3 e imágenes de cualquier tamaño y color. 
 Los filtros que deben de ser aplicados con sus respectivas matrices convolutivas o kernel las cuales son presentadas a continuación.
